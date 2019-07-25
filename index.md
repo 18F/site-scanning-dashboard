@@ -19,6 +19,7 @@ Scan Results:
 					{% endfor %}
 				{% endif %}
 			{% endfor %}
+			<th>API</th>
 		{% endfor %}
 	</tr>
 {% for domain in site.domainlist %}
@@ -33,6 +34,9 @@ Scan Results:
 				{% endfor %}
 			{% endif %}
 		{% endfor %}
+		<td><a href="{{site.scanner_url}}api/v1/domains/{{domain}}/">link</a></td>
 	</tr>
 {% endfor %}
 </table>
+
+<a href="{{site.scanner_url}}">Click Here</a> to go to the main searchable site.

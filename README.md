@@ -41,12 +41,17 @@ the latest scans.
 
 ## How to edit the list of domains to display
 
-The `_config.yml` file has a list of domains called `domainlist`, and a list of
-where to get the scan data under `jekyll_get`.  Add an entry to both lists for
-each domain you want to be in there.
+The `_config.yml` file has a list of domains called `domainlist`.  Change
+that list to change what domains are displayed.
 
 Once you have updated these, you will need to do a build/deploy to see the
 changes.
+
+## How to edit where the site-scanner site lives
+
+Right now this is hardcoded to a temporary location.  You can configure
+this by editing the `_config.yml` file and setting the `scanner_url`
+to be the new location.  Make sure there is a `/` at the end of the URL.
 
 
 Have fun!
