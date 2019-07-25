@@ -42,7 +42,7 @@ the latest scans.
 ## How to edit the list of domains to display
 
 The `_config.yml` file has a list of domains called `domainlist`.  Change
-that list to change what domains are displayed.
+that list to suit your needs.
 
 Once you have updated these, you will need to do a build/deploy to see the
 changes.
@@ -52,6 +52,9 @@ changes.
 Right now this is hardcoded to a temporary location.  You can configure
 this by editing the `_config.yml` file and setting the `scanner_url`
 to be the new location.  Make sure there is a `/` at the end of the URL.
+
+Once you have updated these, you will need to do a build/deploy to see the
+changes.
 
 
 Have fun!
