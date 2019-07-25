@@ -1,7 +1,8 @@
 # Site Scanning Dashboard
 
-This repo contains a jekyll site which will display the output of scans that
-the [site-scanning](https://github.com/18F/site-scanning) project collected.
+This repo contains a [jekyll](https://jekyllrb.com/) site which will display
+the output of scans that the
+[site-scanning](https://github.com/18F/site-scanning) project collected.
 
 It can be built and viewed locally, pushed up to federalist, or deployed on cloud.gov.
 
@@ -19,8 +20,8 @@ to build/deploy this once a day to ensure that it has the latest scan results.
 * cd into the `site-scanning-dashboard` repo.
 * `bundle exec jekyll serve`
 
-You now can look at [http://localhost:4000](http://localhost:4000) and see the
-site.
+Once it gets done building, you can look at 
+[http://localhost:4000](http://localhost:4000) and see the site.
 
 ## How to deploy it to cloud.gov or some other Cloud Foundry instance
 
