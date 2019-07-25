@@ -28,7 +28,10 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# This is the URL for the site-scanner UI and API.  Make sure it ends in /.
 scanner_url: https://scanner-ui-patient-chipmunk.app.cloud.gov/
+
+# This is the list of domains which we want to be displayed.
 domainlist:
   - presidentialinnovationfellows.gov
   - cloud.gov
