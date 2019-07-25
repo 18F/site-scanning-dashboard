@@ -9,7 +9,7 @@ Scan Results:
 <table>
 	<tr>
 		<th>Domain</th>
-		{% for domain in site.domaingroups.first %}
+		{% for domain in site.domainlist.first %}
 			{% for scan in site.data[domain] %}
 				{% if scan.scantype == 'uswds2' %}
 					<th>USWDS Score</th><th>USWDS Version</th>
@@ -21,7 +21,7 @@ Scan Results:
 			{% endfor %}
 		{% endfor %}
 	</tr>
-{% for domain in site.domaingroups %}
+{% for domain in site.domainlist %}
 	<tr>
 		<td><strong>{{domain}}</strong></td>
 		{% for scan in site.data[domain] %}

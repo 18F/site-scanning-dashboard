@@ -28,7 +28,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
-domaingroups:
+domainlist:
   - presidentialinnovationfellows.gov
   - cloud.gov
   - challenge.gov
