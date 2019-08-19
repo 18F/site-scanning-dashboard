@@ -59,6 +59,3 @@ domainlist:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
-# This is for federalist, so it will relaunch it nightly
-schedule: 'nightly'
