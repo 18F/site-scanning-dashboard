@@ -38,7 +38,30 @@ The app will deploy, and cloud.gov will tell you the route that you will need
 to go to in your browser to view the data.
 
 You will want to do a build/deploy like this once a day to ensure that it pulls down
-the latest scans.
+the latest scans.  You can do this with some sort of CI/CD system, for example.
+
+## How to deploy it to Federalist
+
+[Federalist](https://federalist.18f.gov) is a system that deploys static websites
+for government.
+
+* [Fork this repo](https://help.github.com/en/articles/fork-a-repo) and, if
+  desired, edit the list of domains to display in your fork.
+* Get authorized to use federalist.  [Contact](https://federalist.18f.gov/contact/)
+  the Federalist using email or their google form on their [Contact page](https://federalist.18f.gov/contact/).
+* Go to the [Sites](https://federalistapp.18f.gov/sites) page in the federalist app
+  and click on `+Add site`, and add your forked github repo.
+* Click on the site, and click on `Site settings` in the navbar on the left.  Click on
+  `Advanced settings`, and add `schedule: nightly` to the Live site Site configuration
+  text field.
+  This will ensure that the site will be redeployed every day, so that it pulls down the
+  latest and greatest scan data.
+* You can consult the [Federalist Launch Checklist](https://federalist.18f.gov/documentation/launch-checklist/)
+  for information on how to set up a custom domain name, or you can just go to
+  the [sites](https://federalistapp.18f.gov/sites) page and click on `View site`
+  to get to your site.
+
+Viola!  The site should deploy and keep itself up to date.
 
 ## How to edit the list of domains to display
 
