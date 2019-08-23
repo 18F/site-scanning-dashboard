@@ -39,4 +39,4 @@ Scan Results:
 {% endfor %}
 </table>
 
-<a href="{{site.scanner_url}}">Click Here</a> to go to the main searchable site.
+<a href="{{site.scanner_url}}">Click here</a> to go to the main searchable site.
