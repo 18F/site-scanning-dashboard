@@ -13,7 +13,7 @@ Scan Results:
 			{% for scan in site.data[domain] %}
 				{% if scan.scantype == 'uswds2' %}
 					<th>USWDS Score</th><th>USWDS Version</th>
-				{% elsif scan.scantype != 'pagedata' %}
+				{% elsif scan.scantype == '200scanner' %}
 					{% for item in scan.data %}
 						<th>{{item[0]}}</th>
 					{% endfor %}
@@ -28,7 +28,7 @@ Scan Results:
 		{% for scan in site.data[domain] %}
 			{% if scan.scantype == 'uswds2' %}
 				<td>{{scan.data.total_score}}</td><td>{{scan.data.uswdsversion}}</td>
-			{% elsif scan.scantype != 'pagedata' %}
+			{% elsif scan.scantype == '200scanner' %}
 				{% for item in scan.data %}
 					<td>{{item[1]}}</td>
 				{% endfor %}
