@@ -4,6 +4,12 @@ title: code.json
 permalink: /codegov/
 ---
 
+<p>
+This page lists the sites that have a <pre>/code.json</pre> page which returns a 200 status code,
+is an <pre>application/json</pre> or <pre>application/octet-stream</pre> mime-type,
+and, if redirected, ends up on a page that exists in the same domain as where you started.
+</p>
+
 Scan Results:
 <table>
 	<tr>
