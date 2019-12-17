@@ -20,20 +20,24 @@ module Scans_Get
       data.each do |d|
         domain = d['domain']
         agency = d['agency']
-        final_url = d['pagedata']['/code.json']['final_url']
+        final_url = d['extradata']['/code.json']['final_url']
         final_uri = URI(final_url)
-        content_type = d['pagedata']['/code.json']['content_type']
+        content_type = d['extradata']['/code.json']['content_type']
         # allowedmimetypes = ['application/json', 'application/octet-stream', 'text/plain','text/plain; charset=UTF-8', 'text/html; charset=utf-8']
         allowedmimetypes = ['application/json', 'application/octet-stream']
   
-        if final_uri.host.include? domain
-          if allowedmimetypes.include? content_type
-            codejsondata = {}
-            codejsondata['domain'] = domain
-            codejsondata['agency'] = agency
-            codejsondata['final_url'] = final_url
-            site.data['codejsondata'] << (codejsondata)
+        begin
+          if final_uri.host.include? domain
+            if allowedmimetypes.include? content_type
+              codejsondata = {}
+              codejsondata['domain'] = domain
+              codejsondata['agency'] = agency
+              codejsondata['final_url'] = final_url
+              site.data['codejsondata'] << (codejsondata)
+            end
           end
+        rescue
+          puts d['domain'] + " has no final_url"
         end
       end
       path = "#{data_source}/codejsondata.json"
@@ -48,20 +52,24 @@ module Scans_Get
       data.each do |d|
         domain = d['domain']
         agency = d['agency']
-        final_url = d['pagedata']['/data.json']['final_url']
+        final_url = d['extradata']['/data.json']['final_url']
         final_uri = URI(final_url)
-        content_type = d['pagedata']['/data.json']['content_type']
+        content_type = d['extradata']['/data.json']['content_type']
         # allowedmimetypes = ['application/json', 'application/octet-stream', 'text/plain','text/plain; charset=UTF-8', 'text/html; charset=utf-8']
         allowedmimetypes = ['application/json', 'application/octet-stream']
   
-        if final_uri.host.include? domain
-          if allowedmimetypes.include? content_type
-            datajsondata = {}
-            datajsondata['domain'] = domain
-            datajsondata['agency'] = agency
-            datajsondata['final_url'] = final_url
-            site.data['datajsondata'] << (datajsondata)
+        begin
+          if final_uri.host.include? domain
+            if allowedmimetypes.include? content_type
+              datajsondata = {}
+              datajsondata['domain'] = domain
+              datajsondata['agency'] = agency
+              datajsondata['final_url'] = final_url
+              site.data['datajsondata'] << (datajsondata)
+            end
           end
+        rescue
+          puts d['domain'] + " has no final_url"
         end
       end
       path = "#{data_source}/datajsondata.json"
