@@ -14,7 +14,7 @@ module Scans_Get
       end
 
       # slurp down code.json data
-      url = site.config['scanner_url'] + 'searchUSWDS/json/?agency=general+services+administration'
+      url = site.config['scanner_url'] + 'search200/json/?200page=/code.json&present=Present?agency=general+services+administration'
       data = JSON.load(open(url))
       site.data['codejsondata'] = []
       data.each do |d|
