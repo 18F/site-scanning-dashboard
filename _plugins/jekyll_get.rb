@@ -15,7 +15,7 @@ module Scans_Get
 
       # slurp down code.json data
       url = site.config['scanner_url'] + 'search200/json/?200page=/code.json&present=Present'
-      data = JSON.load(open(url))
+      data = JSON.load(URI.open(url))
       site.data['codejsondata'] = []
       data.each do |d|
         domain = d['domain']
