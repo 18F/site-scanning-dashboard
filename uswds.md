@@ -12,7 +12,6 @@ Scan Results:
 			{% for scan in site.data[domain] %}
 				{% if scan.scantype == 'uswds2' %}
 					<th>USWDS Score</th><th>USWDS Version</th>
-					{% endfor %}
 				{% endif %}
 			{% endfor %}
 			<th>API</th>
@@ -24,7 +23,6 @@ Scan Results:
 		{% for scan in site.data[domain] %}
 			{% if scan.scantype == 'uswds2' %}
 				<td>{{scan.data.total_score}}</td><td>{{scan.data.uswdsversion}}</td>
-				{% endfor %}
 			{% endif %}
 		{% endfor %}
 		<td><a href="{{site.scanner_url}}api/v1/domains/{{domain}}/">link</a></td>

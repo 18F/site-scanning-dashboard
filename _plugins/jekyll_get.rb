@@ -14,8 +14,8 @@ module Scans_Get
       end
 
       # slurp down code.json data
-      url = site.config['scanner_url'] + 'search200/json/?200page=/code.json&present=Present'
-      data = JSON.load(open(url))
+      url = site.config['scanner_url'] + 'search200/json/?200page=/data.json&present=Present&mimetype=application/json'
+      data = JSON.load(URI.open(url))
       site.data['codejsondata'] = []
       data.each do |d|
         domain = d['domain']
@@ -46,8 +46,8 @@ module Scans_Get
       end
 
       # slurp down data.json data
-      url = site.config['scanner_url'] + 'search200/json/?200page=/data.json&present=Present'
-      data = JSON.load(open(url))
+      url = site.config['scanner_url'] + 'search200/json/?200page=/data.json&present=Present&mimetype=application/json'
+      data = JSON.load(URI.open(url))
       site.data['datajsondata'] = []
       data.each do |d|
         domain = d['domain']
@@ -88,7 +88,7 @@ module Scans_Get
       domains.each do |d|
         begin
           url = site.config['scanner_url'] + 'api/v1/domains/' + d + '/'
-          site.data[d] = JSON.load(open(url))
+          site.data[d] = JSON.load(URI.open(url))
           path = "#{data_source}/#{d}.json"
           open(path, 'wb') do |file|
             file << JSON.generate(site.data[d])
